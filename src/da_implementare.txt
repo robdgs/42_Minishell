@@ -1,0 +1,6 @@
+export NAME_COMMAND= N
+result:
+NAME_COMMAND=
+NEW VARIABLE N
+
+

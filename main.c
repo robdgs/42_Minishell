@@ -40,7 +40,7 @@ int	main(int argc, char **argv, char **env)
 		else
 		{
 			execute_command(data);
-			free_input(data);
+			free_input(&data);
 		}
 	}	
 	return (0);

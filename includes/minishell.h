@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by lebartol          #+#    #+#             */
-/*   Updated: 2024/09/04 15:57:39 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 17:15:58 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**matrix_dup(char **matrix);
 
 //free_and_null.c
 void	free_all();
-void	free_input(t_data data);
+void	free_input(t_data *data);
 void	free_env(t_data data);
 
 //pwd.c

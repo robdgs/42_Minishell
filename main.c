@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:31:43 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/04 12:52:43 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 17:16:08 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv, char **env)
 		else
 		{
 			execute_command(data);
-			free_input(data);
+			free_input(&data);
 		}
 	}	
 	return (0);

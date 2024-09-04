@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:11:12 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/03 17:44:05 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 12:20:26 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char	**realloc_env(t_data data)
 		new_env[i] = ft_strdup(data.env[i]);
 		i++;
 	}
+	free_env(data);
 	return (new_env);
 }

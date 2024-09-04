@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 11:48:19 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/03 17:16:50 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 15:45:31 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ t_data	split_input(t_data data)
 		i++;
 		j++;
 	}
-	if(data.command == NULL)
+	if(data.command == NULL && data.input)
 	{
 		strcpy[j] = '\0';
 		data.command = ft_strdup(strcpy);

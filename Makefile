@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/04 12:26:14 by tfalchi           #+#    #+#              #
+#    Updated: 2024/09/04 12:26:14 by tfalchi          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		= minishell
 
 SRC = main.c \
@@ -7,6 +19,7 @@ SRC = main.c \
 	src/export/export.c \
 	src/export/export_utils.c \
 	src/parsing.c \
+	src/free_and_null.c 
 
 INCLUDES = ./includes
 
@@ -14,7 +27,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libftprintf.a
 
 #FLAGS		= -Wall -Werror -Wextra -I includes -pthread -fsanitize=thread -g
-FLAGS		=  -Wall -Werror -Wextra -I includes -pthread -g 
+FLAGS		=  -Wall -Werror -Wextra -I includes -pthread -g
 #FLAGS		=  -Wall -Werror -Wextra
 
 OBJS		= $(SRC:%.c=%.o)

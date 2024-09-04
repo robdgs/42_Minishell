@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:31:43 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/03 17:53:24 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 12:52:43 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	main(int argc, char **argv, char **env)
 		printf("args:%s\n", data.args);
 		if(ft_strcmp("exit", data.input) == 0)
 		{
-			free(data.input);
+			free_all(data);
 			rl_clear_history();
 			break;
 		}
 		else
 		{
 			execute_command(data);
-			free(data.input);
+			free_input(data);
 		}
 	}	
-	return 0;
+	return (0);
 }

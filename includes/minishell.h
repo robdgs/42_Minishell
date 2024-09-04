@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by lebartol          #+#    #+#             */
-/*   Updated: 2024/09/03 17:52:07 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 12:18:02 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	print_name();
 char	*read_input();
 void	execute_command(t_data data);
 void	free_all();
+void	free_input(t_data data);
+void	free_env(t_data data);
 void	print_name();
 int		ft_strcmp(const char *s1, const char *s2);
 int 	pwd();

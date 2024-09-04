@@ -52,6 +52,8 @@ fclean: clean
 	@make fclean -C $(LIBFT_DIR)
 	@rm -f *.a
 	@rm -f *.out
+	@rm -f supp/supp.supp
+	@rmdir supp
 	@rm -f *.gch
 	@rm -f $(NAME)
 	@echo "$(RED)[MINISHELL]:\t FCLEAN$(RESET)"

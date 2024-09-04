@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:11:12 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/04 12:20:26 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 16:32:44 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ char	**realloc_env(t_data data)
 		new_env[i] = ft_strdup(data.env[i]);
 		i++;
 	}
-	free_env(data);
+	//free_env(data); se lo decommento fa double free
 	return (new_env);
 }

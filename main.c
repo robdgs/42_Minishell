@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:31:43 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/04 17:16:08 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 16:41:08 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 
 int	main(int argc, char **argv, char **env)
 {
@@ -23,6 +20,7 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	data = initialize_data(env);
 	data.flag = 0;
+	rl_outstream = stderr ;
 	while(1)
 	{
 		data.original_input = readline("Minishell> ");

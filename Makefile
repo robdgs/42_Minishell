@@ -62,7 +62,55 @@ hel: all
 	valgrind --tool=helgrind --history-level=approx -s ./$(NAME)
 
 val: all
-	 valgrind --leak-check=full --track-origins=yes -s --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --track-origins=yes -s --show-leak-kinds=all --suppressions=./supp/supp.supp ./$(NAME)
+supp:
+		mkdir -p supp
+		touch supp/supp.supp
+		echo "{" > supp/supp.supp
+		echo "   IgnoreReadlineLeak" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   match-leak-kinds: reachable" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   fun:add_history" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "{" >> supp/supp.supp
+		echo "   IgnoreReadlineLeak" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   match-leak-kinds: reachable" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   fun:readline" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "{" >> supp/supp.supp
+		echo "   IgnoreReadlineLeak" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   fun:readline" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "{" >> supp/supp.supp
+		echo "   Malloc_Leak_Below_Main" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   fun:malloc" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   obj:/usr/bin/*" >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "{" >> supp/supp.supp
+		echo "   Calloc_Leak_Below_Main" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   fun:calloc" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   obj:/usr/bin/*" >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "{" >> supp/supp.supp
+		echo "   Realloc_Leak_Below_Main" >> supp/supp.supp
+		echo "   Memcheck:Leak" >> supp/supp.supp
+		echo "   fun:realloc" >> supp/supp.supp
+		echo "   ..." >> supp/supp.supp
+		echo "   obj:/usr/bin/*" >> supp/supp.supp
+		echo "}" >> supp/supp.supp
+		echo "use file supp to suppress valgrind errors: valgrind --suppressions=supp/supp.supp ./minishell"
 
 t: all
 	 ./$(NAME)

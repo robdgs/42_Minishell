@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by lebartol          #+#    #+#             */
-/*   Updated: 2024/09/04 12:18:02 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 15:57:39 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,32 @@ typedef struct s_data
 	int 	flag;				
 }			t_data;
 
-
-void	print_matrix(char **matrix);
-char	**matrix_dup(char **matrix);
-void	print_name();
-char	*read_input();
+//execute_command.c
 void	execute_command(t_data data);
+void	print_matrix(char **matrix);
+
+//initialize_data.c
+t_data	initialize_data(char **env);
+char	**matrix_dup(char **matrix);
+
+//free_and_null.c
 void	free_all();
 void	free_input(t_data data);
 void	free_env(t_data data);
-void	print_name();
-int		ft_strcmp(const char *s1, const char *s2);
+
+//pwd.c
 int 	pwd();
-t_data	initialize_data(char **env);
+
+//parsing.c
 t_data	parsing(t_data data);
 t_data	del_extra_spaces(t_data data);
-void	export(t_data data);
-void	print_export(t_data data);
 t_data	split_input(t_data data);
+
+//export.c
+void	export(t_data data);
+
+//export_utils.c
+void	print_export(t_data data);
 char	**realloc_env(t_data data);
 
 #endif

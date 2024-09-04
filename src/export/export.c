@@ -6,14 +6,14 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 15:39:47 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/04 15:18:19 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/04 15:56:21 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void export(t_data data) // for now works only with one variable
-{
+void export(t_data data)
+{// for now works only with one variable
 	int		i;
 	int		j;
 	char	*strcpy;

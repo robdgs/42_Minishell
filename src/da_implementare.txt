@@ -3,4 +3,5 @@ result:
 NAME_COMMAND=
 NEW VARIABLE N
 
+args esistenti senza =
 

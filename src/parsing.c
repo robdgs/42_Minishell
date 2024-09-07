@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 11:48:19 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/04 16:52:25 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/06 12:31:35 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ t_data	del_extra_spaces(t_data data)
 		i++;
 		j++;
 	}
-	strcpy[j] = '\0';
 	data.input = strcpy;
 	return (data);
 }

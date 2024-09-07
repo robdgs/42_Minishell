@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:31:43 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 16:39:14 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 11:48:14 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ int	main(int argc, char **argv, char **env)
 	(void)argc;
 	(void)argv;
 	data = initialize_data(env);
-	data.flag = 0;
-	rl_outstream = stderr ;
 	while(1)
 	{
 		data.original_input = readline("Minishell> ");
 		data.input = ft_strdup(data.original_input);
 		if (data.original_input)
-            add_history(data.original_input); ////to do: da addare tutto assieme se le "" rompono la linea
+            add_history(data.original_input); ///to do: da addare tutto assieme se le "" rompono la linea
 		data = parsing(data);
 		printf("input:%s\n", data.input);
 		printf("command:%s\n", data.command);

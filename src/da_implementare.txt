@@ -5,3 +5,4 @@ NEW VARIABLE N
 
 args esistenti senza =
 
+export con == stampa come ="="

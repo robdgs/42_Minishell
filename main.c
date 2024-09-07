@@ -19,7 +19,6 @@ int	main(int argc, char **argv, char **env)
 	(void)argc;
 	(void)argv;
 	data = initialize_data(env);
-	data.flag = 0;
 	while(1)
 	{
 		data.input = readline("Minishell> "); //(ex data.original_input)

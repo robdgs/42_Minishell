@@ -59,6 +59,7 @@ t_data	split_input(t_data data);
 
 //export.c
 void	export(t_data *data);
+void	env_modification(t_data *data, int j, int x);
 
 //export_utils.c
 void	print_export(t_data data);

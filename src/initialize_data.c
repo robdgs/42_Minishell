@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_data.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:27:20 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 12:31:46 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 12:16:21 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_data	initialize_data(char **env)
 
 	data.env = matrix_dup(env);
 	data.input = NULL;
-	data.original_input = NULL;
+	//data.original_input = NULL;
 	data.command = NULL;
 	data.args = NULL;
 	data.flag = 1;

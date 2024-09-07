@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/07 12:14:16 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 12:03:03 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_data
 {
 	char	**env;				
 	char	*input;				
-	char	*original_input;	
+	//char	*original_input;	
 	char	*command;			//command to execute
 	char	*args;				//arguments of the command
 	int 	flag;				
@@ -45,9 +45,9 @@ t_data	initialize_data(char **env);
 char	**matrix_dup(char **matrix);
 
 //free_and_null.c
-void	free_all();
+void	free_all(t_data *data);
 void	free_input(t_data *data);
-void	free_env(t_data data);
+void	free_env(t_data *data);
 
 //pwd.c
 int 	pwd();

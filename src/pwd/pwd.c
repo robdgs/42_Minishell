@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:08:51 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/08/27 12:31:26 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 12:18:38 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int pwd()
 	if (directory)
 	{
 		printf("%s\n", directory);
+		free(directory);
+		directory = NULL;
 		return (0);
 	}
 	else

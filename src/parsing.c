@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 11:48:19 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 12:31:35 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 12:25:44 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_data	del_extra_spaces(t_data data)
 	j = 0;
 	flag1 = 0;
 	flag2 = 0;
-	strcpy = calloc(sizeof(char), ft_strlen(data.input) + 1);
+	if(data.input)
+		strcpy = ft_calloc(sizeof(char), ft_strlen(data.input) + 1);
 	while (data.input[i] == ' ')
 		i++;
 	while (data.input[i] != '\0')
@@ -58,7 +59,8 @@ t_data	split_input(t_data data)
 
 	i = 0;
 	j = 0;
-	strcpy = calloc(sizeof(char), ft_strlen(data.input) + 1);
+	if(data.input)
+		strcpy = ft_calloc(sizeof(char), ft_strlen(data.input) + 1);
 	while (data.input[i] != '\0')
 	{
 		if (data.input[i] == 39)

@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 16:40:41 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 12:14:16 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ t_data	split_input(t_data data);
 
 //export.c
 void	export(t_data *data);
+void	env_modification(t_data *data, int j, int x);
 
 //export_utils.c
 void	print_export(t_data data);

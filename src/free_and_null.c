@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   free_and_null.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 12:05:16 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 12:31:23 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/07 11:44:50 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	free_all(t_data data)
+void	free_all(t_data *data)
 {
-	free_input(&data);
+	free_input(data);
 	free_env(data);
 }
 
@@ -35,26 +35,26 @@ void	free_input(t_data *data)
         free(data->args);
         data->args = NULL;
     }
-    if (data->original_input) {
+   /*  if (data->original_input) {
         printf("Freeing original_input: %s\n", data->original_input);
         free(data->original_input);
         data->original_input = NULL;
-    }
+    } */
 }
 
-void	free_env(t_data data)
+void	free_env(t_data *data)
 {
 	int i;
 
 	i = 0;
-	if (data.env == NULL)
+	if (data->env == NULL)
 		return;
-	while (data.env[i] != NULL)
+	while (data->env[i] != NULL)
 	{
-		free(data.env[i]);
-		data.env[i] = NULL;
+		free(data->env[i]);
+		data->env[i] = NULL;
 		i++;
 	}
-	free(data.env);
-	data.env = NULL;
+	free(data->env);
+	data->env = NULL;
 }

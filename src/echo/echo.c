@@ -6,7 +6,7 @@
 /*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:19:38 by rd-agost          #+#    #+#             */
-/*   Updated: 2024/09/09 11:19:45 by rd-agost         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:38:09 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,26 @@
 void builtin_echo(t_data *data)
 {
     int i = 0;
-    int newline = 1;
 
 	if(data->args == NULL)
+	{
+		printf("\n");
 		return;
+	}
     if (data->args[i] && strcmp(&data->args[i], "-n") == 0)
-    {
-        newline = 0;
         i++;
-    }
     while (data->args[i])
     {
-        printf("%c", data->args[i]);
-        i++;
+		if ((data->args[i] == '\"' || data->args[i] == '\'')
+			&& data->args[i + 1] == '\0')
+			break;
+		else if (data->args[i] == '\"' || data->args[i] == '\'')
+			i++;
+        else
+		{
+			printf("%c", data->args[i]);
+        	i++;
+		}
     }
-    if (newline)
-        printf("\n");
+    printf("\n");
 }

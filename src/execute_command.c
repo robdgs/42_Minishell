@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_command.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:39:48 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/06 16:39:54 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/09 11:13:22 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void execute_command(t_data *data)
 {
 	if (ft_strcmp("echo", data->command) == 0)
-		printf("echo\n");
+		builtin_echo(data);
 	else if (ft_strcmp("cd", data->command) == 0)
 		printf("cd\n");
 	else if(ft_strcmp("pwd", data->command) == 0)

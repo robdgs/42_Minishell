@@ -3,37 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 17:07:37 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/08/28 17:26:21 by tfalchi          ###   ########.fr       */
+/*   Created: 2024/09/09 11:19:38 by rd-agost          #+#    #+#             */
+/*   Updated: 2024/09/09 11:38:09 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void echo(char *input)
+void builtin_echo(t_data *data)
 {
-    char *env_var;
-	if (strncmp("echo", input) == 0) 
-		input += 4;
-	else
+    int i = 0;
+
+	if(data->args == NULL)
 	{
-		printf("Error: invalid command\n");
+		printf("\n");
 		return;
 	}
-	if (strncmp(input, " $") == 0) 
-	{
-		env_var = getenv(input + 2);
-		
-	}
-	else
-	{
-		while (ft_strcmp("echo", input) == 0)
+    if (data->args[i] && strcmp(&data->args[i], "-n") == 0)
+        i++;
+    while (data->args[i])
+    {
+		if ((data->args[i] == '\"' || data->args[i] == '\'')
+			&& data->args[i + 1] == '\0')
+			break;
+		else if (data->args[i] == '\"' || data->args[i] == '\'')
+			i++;
+        else
 		{
-			/* code */
+			printf("%c", data->args[i]);
+        	i++;
 		}
-		
-		printf("%s\n", input);
-	}
+    }
+    printf("\n");
 }

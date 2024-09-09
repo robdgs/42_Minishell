@@ -6,7 +6,7 @@
 /*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:31:43 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/07 11:48:21 by rd-agost         ###   ########.fr       */
+/*   Updated: 2024/09/07 16:41:30 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv, char **env)
 	data = initialize_data(env);
 	while(1)
 	{
-		data.input = readline("Minishell> "); //(ex data.original_input)
+		data.input = readline("Minishell$ "); //(ex data.original_input)
 		//data.input = ft_strdup(data.original_input); (ex data.input)
 		if (data.input)
             add_history(data.input); ////to do: da addare tutto assieme se le "" rompono la linea

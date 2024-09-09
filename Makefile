@@ -7,7 +7,8 @@ SRC = main.c \
 	src/export/export.c \
 	src/export/export_utils.c \
 	src/parsing.c \
-	src/free_and_null.c 
+	src/free_and_null.c \
+	src/echo/echo.c  
 
 INCLUDES = ./includes
 

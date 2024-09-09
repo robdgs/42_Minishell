@@ -6,7 +6,7 @@
 /*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/07 12:03:03 by rd-agost         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:09:43 by rd-agost         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <limits.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdbool.h>
 
 typedef struct s_data
 {
@@ -51,6 +52,9 @@ void	free_env(t_data *data);
 
 //pwd.c
 int 	pwd();
+
+//echo.c
+void builtin_echo(t_data *data);
 
 //parsing.c
 t_data	parsing(t_data data);

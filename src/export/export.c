@@ -6,7 +6,7 @@
 /*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 15:39:47 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/07 12:49:57 by tfalchi          ###   ########.fr       */
+/*   Updated: 2024/09/10 12:18:06 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,15 @@ void	env_modification(t_data *data, int j, int x)
 {
 	char *strcpy;
 	int i;
+	int pos_eq;
 
 	i = 0;
 	strcpy = ft_calloc(sizeof(char), j - x + 1);
 	ft_strlcpy(strcpy, &data->args[x], j - x + 1);
+	pos_eq = ft_strchr(strcpy, '=') - strcpy;
 	while (data->env[i] != NULL)
 	{
-		if (ft_strncmp(data->env[i], strcpy, j) == 0)
+		if (ft_strncmp(data->env[i], strcpy, pos_eq) == 0)
 		// if the variable is already in the environment, update it
 		{
 			free(data->env[i]);

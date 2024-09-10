@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:01:24 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/09 11:09:43 by rd-agost         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:38:12 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_data
 	//char	*original_input;	
 	char	*command;			//command to execute
 	char	*args;				//arguments of the command
-	int 	flag;				
 }			t_data;
 
 //execute_command.c
@@ -68,5 +67,6 @@ void	env_modification(t_data *data, int j, int x);
 //export_utils.c
 void	print_export(t_data data);
 char	**realloc_env(t_data data);
+char	**sort_env(t_data data);
 
 #endif

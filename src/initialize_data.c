@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_data.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rd-agost <rd-agost@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tfalchi <tfalchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:27:20 by tfalchi           #+#    #+#             */
-/*   Updated: 2024/09/07 12:16:21 by rd-agost         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:38:20 by tfalchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_data	initialize_data(char **env)
 	//data.original_input = NULL;
 	data.command = NULL;
 	data.args = NULL;
-	data.flag = 1;
 	
 	return (data);
 }
